@@ -1,3 +1,5 @@
+My personal emacs-config, built on the config off Clojure for the Brave and True.
+
 # this is a Clojure-friendly emacs config
 
 If you're new to emacs, check out
