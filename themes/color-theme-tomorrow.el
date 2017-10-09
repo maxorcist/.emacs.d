@@ -106,9 +106,9 @@ names to which it refers are bound."
    `(;; Standard font lock faces
      (default ((,class (:foreground ,foreground :background ,background))))
      (bold ((,class (:weight bold))))
-     (bold-italic ((,class (:slant normal :weight bold))))
+     (bold-italic ((,class (:slant italic :weight bold))))
      (underline ((,class (:underline t))))
-     (italic ((,class (:slant normal))))
+     (italic ((,class (:slant italic))))
      (shadow ((,class (:foreground ,comment))))
      (success ((,class (:foreground ,green))))
      (error ((,class (:foreground ,red))))
@@ -117,8 +117,8 @@ names to which it refers are bound."
 
      ;; Font-lock stuff
      (font-lock-builtin-face ((,class (:foreground ,aqua))))
-     (font-lock-comment-delimiter-face ((,class (:foreground ,comment :slant normal))))
-     (font-lock-comment-face ((,class (:foreground ,comment :slant normal))))
+     (font-lock-comment-delimiter-face ((,class (:foreground ,comment :slant italic))))
+     (font-lock-comment-face ((,class (:foreground ,comment :slant italic))))
      (font-lock-constant-face ((,class (:foreground ,aqua))))
      (font-lock-doc-face ((,class (:foreground ,comment))))
      (font-lock-doc-string-face ((,class (:foreground ,yellow))))
@@ -199,7 +199,7 @@ names to which it refers are bound."
      (mode-line ((,class (:background ,selection :foreground ,foreground))))
      (mode-line-inactive ((,class (:background ,current-line :foreground ,foreground))))
      (mode-line-buffer-id ((,class (:foreground ,purple :background nil))))
-     (mode-line-emphasis ((,class (:foreground ,foreground :slant normal))))
+     (mode-line-emphasis ((,class (:foreground ,foreground :slant italic))))
      (mode-line-highlight ((,class (:foreground ,purple :box nil :weight bold))))
      (minibuffer-prompt ((,class (:foreground ,blue))))
      (region ((,class (:background ,selection))))
@@ -407,7 +407,7 @@ names to which it refers are bound."
      (erb-exec-delim-face ((,class (:background ,current-line))))
      (erb-out-face ((,class (:background ,current-line :weight bold))))
      (erb-out-delim-face ((,class (:background ,current-line))))
-     (erb-comment-face ((,class (:background ,current-line :weight bold :slant normal))))
+     (erb-comment-face ((,class (:background ,current-line :weight bold :slant italic))))
      (erb-comment-delim-face ((,class (:background ,current-line))))
 
      ;; Message-mode

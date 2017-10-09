@@ -1,0 +1,14 @@
+ls
+cd c:/Windows/System32/drivers/etc/
+cd ~/Homestead/
+vagrant ssh
+ls
+vagrant -h
+vagrant global-status
+cd c:/Windows/System32/drivers/etc/
+hosts
+emacs hosts 
+open hosts
+cd ~/Homestead/
+vagrant up
+vagrant ssh

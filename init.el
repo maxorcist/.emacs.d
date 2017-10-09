@@ -2,10 +2,11 @@
 ;; Packages
 ;;;;
 
+
 ;; Define package repositories
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
@@ -54,6 +55,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    ;; web-mode for editing html + php
+    web-mode
+    
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -66,9 +70,6 @@
 
     ;; project navigation
     projectile
-
-    ;; colorful parenthesis matching
-    rainbow-delimiters
 
     ;; edit html tags like sexps
     tagedit
@@ -138,14 +139,45 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
+ '(blink-cursor-mode nil)
+ '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("8a46f3a89d59f8e9da3160292b9210b4ba0f7e11585793ce47b37bee886e3b41" "6458521f0b89db211b02eb0037e57d0a32019e6b717b7015a1486d9558b86ba1" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "1a2a0286b90917fb70e4b578dc2a4fee3e768123e2ea6e0890f7a3e30505e119" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "156dbb50f030575a1539d141660db3469b4b9d1e7676f9bfc04e9ccfe836477c" default)))
+ '(fci-rule-color "#2a2a2a")
+ '(package-selected-packages
+   (quote
+    (web-mode smartparens 4clojure tagedit smex projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
+ '(show-paren-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 100 :width normal)))))
+ 
 
+(menu-bar-mode 1)
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
 
-;; Allow yanking from clipboard with scrollwheel. Might work as default.
+(load-theme 'gotham t)
 (global-set-key (kbd "<mouse-2>") 'x-clipboard-yank)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
-;; Don't ask permission before uppercasing or lowercasing with C-x C-u/C-l
-;; (put 'downcase-region 'disabled nil)
-;; (put 'upcase-region 'disabled nil)
+(defun scroll-down-10 ()
+  "Move cursor down 10 lines"
+  (interactive)
+  (next-line 10)  )
+(global-set-key (kbd "M-n") 'scroll-down-10)
 
-(setq cider-repl-use-clojure-font-lock t)
-
+(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
