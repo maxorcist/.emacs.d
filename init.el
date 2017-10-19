@@ -149,3 +149,5 @@
 
 (setq cider-repl-use-clojure-font-lock t)
 
+(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
+(global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
