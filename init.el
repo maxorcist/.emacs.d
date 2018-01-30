@@ -139,10 +139,6 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 
-
-;; Allow yanking from clipboard with scrollwheel. Might work as default.
-(global-set-key (kbd "<mouse-2>") 'x-clipboard-yank)
-
 ;; Don't ask permission before uppercasing or lowercasing with C-x C-u/C-l
 ;; (put 'downcase-region 'disabled nil)
 ;; (put 'upcase-region 'disabled nil)
