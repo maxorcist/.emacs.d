@@ -1,3 +1,4 @@
+/*
 .smex-items
 *~$
 places
@@ -8,3 +9,13 @@ projectile-bookmarks.eld
 projectile.cache
 auto-save-list
 backups
+
+!.gitignore
+!README.md
+!init.el
+!customizations/
+themes/
+!themes/color-theme-tomorrow.el
+!themes/tomorrow**.el
+!themes/zenburn**
+
