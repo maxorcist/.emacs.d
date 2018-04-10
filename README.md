@@ -1,4 +1,6 @@
-My personal emacs-config, built on the config off Clojure for the Brave and True.
+## NOT IN USE. SAVED FOR HISTORICAL REASONS.
+
+My personal emacs-config, built on the config off Clojure for the Brave and True. 
 
 # this is a Clojure-friendly emacs config
 
